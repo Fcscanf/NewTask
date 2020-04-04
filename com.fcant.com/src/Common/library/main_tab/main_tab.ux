@@ -1,0 +1,33 @@
+<!-- 
+  参数：每个item包含：图片路径img，标题。以及对应的选中时的
+  图片img和标题颜色，参照下面的写法
+  主tab注意和固定主tab区分（固定主tab不支持滑动）
+ -->
+<!-- 不可滑动主tab -->
+<import name="fixedmaintab" src="./component/c_fixed"></import>
+<!-- 可滑动 主tab -->
+<import name="scrollablemaintab" src="./component/c_scrollable"></import>
+<template>
+  <div>
+    <fixedmaintab if="{{isFixedMainTab}}" data="{{data}}"></fixedmaintab>
+    <!-- <scrollablemaintab if="{{!isFixedMainTab}}" data="{{data}}"></scrollablemaintab> -->
+  </div>
+</template>
+
+<script>
+  module.exports = {
+    data: {
+      isFixedMainTab: true,
+      data: {
+        color_normal: '#1A1A1A',
+        color_active: '#FF7500',
+        list: [
+          { i: 0, color: '#878787', pic: 'component/Component_MainTab/img/home_nor.png', pic_choice: 'component/Component_MainTab/img/home_cho.png', show: false, title: '首页' },
+          { i: 1, color: '#878787', pic: 'component/Component_MainTab/img/classification_nor.png', pic_choice: 'component/Component_MainTab/img/classification_cho.png', show: false, title: '分类' },
+          { i: 2, color: '#878787', pic: 'component/Component_MainTab/img/shoppingCart_nor.png', pic_choice: 'component/Component_MainTab/img/shoppingCart_cho.png', show: false, title: '购物车' },
+          { i: 3, color: '#878787', pic: 'component/Component_MainTab/img/mine_normal.png', pic_choice: 'component/Component_MainTab/img/mine_choice.png', show: false, title: '我的' }
+        ]
+      }
+    }
+  }
+</script>

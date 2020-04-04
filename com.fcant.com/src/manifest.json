@@ -1,0 +1,86 @@
+{
+  "package": "com.fcant.com",
+  "name": "任务卡片",
+  "versionName": "1.0.0",
+  "versionCode": 1,
+  "icon": "/Common/logo.png",
+  "minPlatformVersion": 1060,
+  "features": [
+    {
+      "name": "system.configuration"
+    },
+    {
+      "name": "system.calendar"
+    },
+    {
+      "name": "system.prompt"
+    },
+    {
+      "name": "system.router"
+    }
+  ],
+  "permissions": [
+    {
+      "origin": "*"
+    }
+  ],
+  "config": {},
+  "router": {
+    "entry": "Hello",
+    "pages": {
+      "Hello": {
+        "component": "hello"
+      },
+      "Card/Task": {
+        "component": "task",
+        "path": "/Card/Task"
+      }
+    }
+  },
+  "display": {
+    "pages": {
+      "Hello": {
+        "titleBarText": "Create Card"
+      }
+    }
+  },
+  "widgets": [
+    {
+      "name": "task",
+      "id": "fcc",
+      "path": "/Card/Task",
+      "component": "task",
+      "minPlatformVersion": 1060,
+      "targetManufactorys": [
+        "huawei"
+      ],
+      "params": [
+        {
+          "name": "title",
+          "mandatory": true,
+          "valueSample": "任务卡",
+          "desc": "卡片名称"
+        },
+        {
+          "name": "taskTheme",
+          "mandatory": true,
+          "valueSample": "任务卡主题",
+          "desc": "定义主题"
+        },
+        {
+          "name": "taskContent",
+          "mandatory": true,
+          "valueSample": "卡片内容",
+          "desc": "卡片的详情"
+        },
+        {
+          "name": "taskWho",
+          "mandatory": true,
+          "valueSample": "相关人员",
+          "desc": "相关人员"
+        }
+      ],
+      "uses-permission": []
+    }
+  ]
+}

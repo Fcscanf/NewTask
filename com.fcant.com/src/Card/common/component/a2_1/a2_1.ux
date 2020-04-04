@@ -1,0 +1,45 @@
+<template>
+    <div class="a21_box">
+        <div style="align-items: center; justify-content: {{position}}">
+            <text class="a21_number_12sp">{{taskDetail[0]}}</text>
+        </div>
+        <div style="align-items: center; justify-content: {{position}}" class="a21_marginT">
+            <text class="a21_number_30sp">{{taskDetail[1]}}</text>
+        </div>
+    </div>
+
+</template>
+<style lang="sass">
+    @import "../../css/basic.scss";
+
+    .a21_box {
+        flex-direction: column;
+        padding: dpConvert($elementsMarginVerticalL) dpConvert(0) dpConvert($elementsMarginVerticalL) dpConvert(0);
+    }
+
+    .a21_number_12sp {
+        @include textSizeCardCaption1;
+        color: $textColorSecondary;
+    }
+
+    .a21_marginT {
+        margin-top: dpConvert($elementsMarginVerticalS);
+    }
+
+    .a21_number_30sp {
+        @include textSizeCardNum1;
+        color: $textColorPrimary;
+    }
+</style>
+
+<script>
+    module.exports = {
+        props: [
+            'taskDetail'
+        ],
+        data: {
+            taskDetail: ['Task Theme', 'Task Content'],
+            position: 'flex-start',
+        },
+    }
+</script>

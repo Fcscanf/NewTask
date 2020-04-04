@@ -1,0 +1,42 @@
+<import name="card_title" src="../common/component/card_title/card_title.ux"></import>
+<import name="a2_1" src="../common/component/a2_1/a2_1.ux"></import>
+<import name="d2_2_1" src="../common/component/d2_2_1/d2_2_1.ux"></import>
+<import name="card_bottom_3" src="../common/component/card_bottom_3/card_bottom_3.ux"></import>
+<template>
+    <div class="dataemphasis_box" widgetid="b0bed9ff-d72b-4d94-a967-ae7ddc3d7450">
+        <card_title title="{{title}}"></card_title>
+        <div class="dataemphasis_content_box">
+            <a2_1 task-detail="{{[taskTheme, taskContent]}}"></a2_1>
+            <d2_2_1 who="{{taskWho}}"></d2_2_1>
+        </div>
+        <card_bottom_3 button-array="{{buttonArray}}"></card_bottom_3>
+    </div>
+
+</template>
+<style lang="sass">
+    @import "../common/css/basic.scss";
+
+    .dataemphasis_box {
+        flex-direction: column;
+        padding: dpConvert(0) dpConvert($elementsMarginHorizontalL) dpConvert(0) dpConvert($elementsMarginHorizontalL);
+    }
+
+    .dataemphasis_content_box {
+        flex-direction: column;
+    }
+</style>
+
+<script>
+    module.exports = {
+        props: [
+            'title','taskTheme','taskContent','taskWho'
+        ],
+        data: {
+            title:'1任务卡',
+            taskTheme:'1卡片主题',
+            taskContent:'1卡片内容',
+            taskWho:'1卡片相关人员',
+            buttonArray: ['完成任务', '取消任务'],
+        },
+    }
+</script>
